@@ -10,6 +10,9 @@ public class JPaymentMapper {
     public Payment toDomain(JPayment j) {
         return new Payment(
                 j.getId(),
+                j.getPspPaymentId(),
+                j.getPspType(),
+                j.getLastPspVerificationInstant(),
                 j.getDate(),
                 j.getAmount(),
                 j.getStatus()
@@ -21,6 +24,9 @@ public class JPaymentMapper {
                 p.id(),
                 p.date(),
                 p.amount(),
+                p.pspType(),
+                p.pspPaymentId(),
+                p.lastPspVerificationInstant(),
                 p.status()
         );
     }

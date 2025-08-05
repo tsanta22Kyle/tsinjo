@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: tsinjo-std21001
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  # le profil actif sera défini au démarrage
+  profiles:
+    active: preprod
+
+# ⚠️ NE PAS METTRE LA CONFIG DB ICI

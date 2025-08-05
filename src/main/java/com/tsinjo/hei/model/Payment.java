@@ -5,7 +5,10 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 public record Payment(
-        UUID id,
+        String id,
+        String pspPaymentId,
+        PspType pspType,
+        Instant lastPspVerificationInstant,
         LocalDateTime date,
         double amount,
         PaymentStatus status
