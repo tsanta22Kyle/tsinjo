@@ -25,9 +25,5 @@ public class JDonationMapper {
         );
     }
 
-    public JDonation toEntity(Donation d) {
-        JDonor jDonor = donorRepo.getReferenceById(d.donor().id());
-        JPayment jPayment = paymentRepo.getReferenceById(d.payment().id());
-        return new JDonation(d.id(), jDonor, jPayment);
-    }
+
 }

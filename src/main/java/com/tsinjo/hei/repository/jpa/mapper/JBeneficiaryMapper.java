@@ -10,7 +10,5 @@ public class JBeneficiaryMapper {
         return new Beneficiary(j.getId(), j.getFullName(), j.getEmail());
     }
 
-    public JBeneficiary toEntity(Beneficiary b) {
-        return new JBeneficiary(b.id(), b.fullName(), b.email());
-    }
+
 }

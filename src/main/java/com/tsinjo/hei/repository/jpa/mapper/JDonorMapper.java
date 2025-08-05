@@ -10,7 +10,5 @@ public class JDonorMapper {
         return new Donor(j.getId(), j.getFullName(), j.getEmail());
     }
 
-    public JDonor toEntity(Donor d) {
-        return new JDonor(d.id(), d.fullName(), d.email());
-    }
+
 }

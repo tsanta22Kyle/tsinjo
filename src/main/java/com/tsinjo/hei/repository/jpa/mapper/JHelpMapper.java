@@ -26,9 +26,5 @@ public class JHelpMapper {
         );
     }
 
-    public JHelp toEntity(Help h) {
-        JBeneficiary jBeneficiary = beneficiaryRepo.getReferenceById(h.beneficiary().id());
-        JPayment jPayment = paymentRepo.getReferenceById(h.payment().id());
-        return new JHelp(h.id(), jBeneficiary, jPayment, h.description());
-    }
+
 }
