@@ -3,6 +3,8 @@ package com.tsinjo.hei.endpoint.rest.controller;
 import com.tsinjo.hei.endpoint.DTO.DonationRest;
 import com.tsinjo.hei.endpoint.DTO.DonationViewrest;
 import com.tsinjo.hei.model.Donation;
+import com.tsinjo.hei.repository.jpa.JDonationRepository;
+import com.tsinjo.hei.repository.jpa.model.JDonation;
 import com.tsinjo.hei.service.DonationService;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class DonationController {
   private final DonationService donationService;
+  private final JDonationRepository repository;
 
   @PostMapping("donate")
   public Donation donate(@RequestBody DonationRest donation) {
@@ -22,7 +25,7 @@ public class DonationController {
   }
 
   @GetMapping("donations")
-  public List<DonationViewrest> getDonations() {
-    return donationService.getAllDonationViews();
+  public List<JDonation> getDonations() {
+    return repository.findAll();
   }
 }
