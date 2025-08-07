@@ -2,14 +2,13 @@ package com.tsinjo.hei.repository.jpa.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.UUID;
 
 @Entity
+@ToString
+@EqualsAndHashCode
 @Table(name = "donation")
 @Getter@Setter@AllArgsConstructor@NoArgsConstructor
 public class JDonation {

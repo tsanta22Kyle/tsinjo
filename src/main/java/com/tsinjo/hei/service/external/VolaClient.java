@@ -11,14 +11,18 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @Slf4j
 @Component
-@RequiredArgsConstructor
 public class VolaClient {
 
-    @Value("${vola.api.url}")
+
     private String baseUrl;
 
-    @Value("${vola.api.key}")
+
     private String apiKey;
+
+    public VolaClient(@Value("${vola.api.url}") String baseUrl,@Value("${vola.api.key}") String apiKey) {
+        this.baseUrl = baseUrl;
+        this.apiKey = apiKey;
+    }
 
     private final RestTemplate restTemplate = new RestTemplate();
 

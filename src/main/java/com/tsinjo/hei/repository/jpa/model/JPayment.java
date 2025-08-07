@@ -4,10 +4,7 @@ package com.tsinjo.hei.repository.jpa.model;
 import com.tsinjo.hei.model.PaymentStatus;
 import com.tsinjo.hei.model.PspType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -19,6 +16,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
+@EqualsAndHashCode
 public class JPayment {
     @Id
     private String id ;
