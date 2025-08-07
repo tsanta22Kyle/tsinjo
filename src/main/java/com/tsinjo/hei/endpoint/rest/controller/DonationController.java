@@ -1,0 +1,31 @@
+package com.tsinjo.hei.endpoint.rest.controller;
+
+import com.tsinjo.hei.endpoint.DTO.DonationRest;
+import com.tsinjo.hei.endpoint.DTO.DonationViewrest;
+import com.tsinjo.hei.model.Donation;
+import com.tsinjo.hei.repository.jpa.JDonationRepository;
+import com.tsinjo.hei.repository.jpa.model.JDonation;
+import com.tsinjo.hei.service.DonationService;
+import java.util.List;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@AllArgsConstructor
+public class DonationController {
+  private final DonationService donationService;
+  private final JDonationRepository repository;
+
+  @PostMapping("donate")
+  public Donation donate(@RequestBody DonationRest donation) {
+    return donationService.save(donation);
+  }
+
+  @GetMapping("donations")
+  public List<JDonation> getDonations() {
+    return repository.findAll();
+  }
+}
