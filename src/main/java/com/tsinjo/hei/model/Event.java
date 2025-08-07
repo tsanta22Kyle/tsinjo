@@ -1,12 +1,11 @@
 package com.tsinjo.hei.model;
 
-import lombok.AllArgsConstructor;
-
 import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class Event {
-    private final Payment payment;
-    private final User user;
-    private final LocalDateTime creationDate;
+  private final Payment payment;
+  private final User user;
+  private final LocalDateTime creationDate;
 }

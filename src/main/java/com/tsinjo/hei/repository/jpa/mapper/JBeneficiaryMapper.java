@@ -6,9 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JBeneficiaryMapper {
-    public Beneficiary toDomain(JBeneficiary j) {
-        return new Beneficiary(j.getId(), j.getFullName(), j.getEmail());
-    }
-
-
+  public Beneficiary toDomain(JBeneficiary j) {
+    return new Beneficiary(j.getId(), j.getFullName(), j.getEmail());
+  }
 }
